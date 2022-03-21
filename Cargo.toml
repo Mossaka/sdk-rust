@@ -54,11 +54,7 @@ poem-lib = { version = "=1.2.34", optional = true, package = "poem" }
 hostname = "^0.3"
 uuid = { version = "^0.8", features = ["v4"] }
 
-[target.'cfg(all(target_arch = "wasm32", target_os = "unknown"))'.dependencies]
-web-sys = { version = "^0.3", features = ["Window", "Location"] }
-uuid = { version = "^0.8", features = ["v4", "wasm-bindgen"] }
-
-[target.'cfg(all(target_arch = "wasm32", target_os="wasi"))'.dependencies]
+[target.'cfg(target_arch = "wasm32")'.dependencies]
 uuid = { version = "^0.8", features = ["v4"] }
 
 [dev-dependencies]
